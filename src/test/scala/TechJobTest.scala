@@ -25,4 +25,26 @@ class TechJobTest extends FunSuite {
         val second = TreeNode(1, Some(TreeNode(2, None, None)), None) 
         assert(TreeNode.isSameTree(Some(first), Some(second)))
     }
+
+    test("Check Email is null") {
+        intercept[IllegalArgumentException] {
+            Email(null)
+        }
+    }
+
+    test("Check Email is empty") {
+        intercept[IllegalArgumentException] {
+            Email(" ")
+        }
+    }
+
+    test("Check Email is invalid") {
+        intercept[IllegalArgumentException] {
+            Email("invalid@invalid")
+        }
+    }
+
+    test("Check Email is correct") {
+        assert(Email("correct@gmail.com").toString() == "correct@gmail.com")
+    }
 }
