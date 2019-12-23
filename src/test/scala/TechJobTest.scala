@@ -19,4 +19,10 @@ class TechJobTest extends FunSuite {
         val second = TreeNode(1, None, Some(TreeNode(2, None, None)))
         assert(!TreeNode.isSameTree(Some(first), Some(second)))
     }
+
+    test("TreeNode.isSameTree another equals test") {
+        val first = TreeNode(1, Some(TreeNode(2, None, None)), None)
+        val second = TreeNode(1, Some(TreeNode(2, None, None)), None) 
+        assert(TreeNode.isSameTree(Some(first), Some(second)))
+    }
 }
