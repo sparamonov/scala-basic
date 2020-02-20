@@ -40,7 +40,7 @@ class TechJobTest extends FunSuite {
 
     test("Check Email is invalid") {
         intercept[IllegalArgumentException] {
-            Email("invalid@invalid")
+            Email("invalid@invalid.")
         }
     }
 
